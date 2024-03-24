@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>osc mini hackathon 2024</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Days+One&display=swap" rel="stylesheet">
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="fonts/icomoon/style.css">
+  <link href='packages/core/main.css' rel='stylesheet' />
+  <link href='packages/daygrid/main.css' rel='stylesheet' />
+</head>
+
+<body>
+  <div class="container-fluid"">
+      <div class=" row">
+    <h1>UF Club Page</h1>
+  </div>
+  <div class="row">
+    <div class="rowFill">
+      <h6>‎ </h6>
+    </div>
+    <div class="row">
+      <div class="col-md-1">
+        <div class="row">
+          <img src="uf.png" alt="...">
+        </div>
+        <div class="row">‎ </div>
+        <div class="row">
+          <a href="home.html" role="button">
+            <span class="material-symbols-outlined">home</span>
+          </a>
+        </div>
+        <div class="row">‎ </div>
+        <div class="row">
+          <a href="search.html" role="button">
+            <span class="material-symbols-outlined">search</span>
+          </a>
+        </div>
+        <div class="row">‎ </div>
+        <div class="row">
+          <a href="following.html" role="button">
+            <span class="material-symbols-outlined">star</span>
+          </a>
+        </div>
+        <div class="row">‎ </div>
+        <div class="row">
+          <a href="calendar.html" role="button">
+            <span class="material-symbols-outlined">calendar_today</span>
+          </a>
+        </div>
+        <div class="row">‎ </div>
+        <div class="row">
+          <a href="profile.html" role="button">
+            <span class="material-symbols-outlined">person</span>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-11 blue">
+        <div class="row">
+          <br>
+        </div>
+        <div class="row">
+          <h5><b>Recommended Organizations</b></h5>
+          <div class="card" id="cardImage" style="width: 18rem">
+            <div class="card-body" id="card">
+            </div>
+          </div>
+          <div class="card" id="cardImage02" style="width: 18rem">
+            <div class="card-body" id="card02">
+            </div>
+          </div>
+          <div class="card" id="cardImage03" style="width: 18rem">
+            <div class="card-body" id="card03">
+            </div>
+          </div>
+          <div class="card" id="cardImage04" style="width: 18rem">
+            <div class="card-body" id="card04">
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <br><br><br>
+        </div>
+        <div class="row">
+          <h5><b>Search for Organizations</b></h5>
+        </div>
+        <div class="row">
+          <div class="input-group">
+            <div class="form-outline" data-mdb-input-init>
+              <input type="search" id="form1" class="form-control" />
+            </div>
+            <button type="button" class="btnSearch" onclick="searchOrgs()" data-mdb-ripple-init>
+              <span class="material-symbols-outlined">search</span>
+            </button>
+          </div>
+          <button type="button" class="btnFilter" onclick="filterOn()">Filters</button>
+          <br>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label class="checkbox" id="cultural">
+              <input type="checkbox">
+              Cultural
+            </label>
+          </div>
+          <div class="field">
+            <label class="checkbox" id="engineering">
+              <input type="checkbox">
+              Engineering
+            </label>
+          </div>
+          <div class="field">
+            <label class="checkbox" id="professional">
+              <input type="checkbox">
+              Professional
+            </label>
+          </div>
+          <div class="field">
+            <label class="checkbox" id="musical">
+              <input type="checkbox">
+              Musical
+            </label>
+          </div>
+        </div>
+        <div class="row">
+          <br>
+        </div>
+        <div class="row" id="allCards">
+        </div>
+        <div class="row">
+          <br>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+    integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+    crossorigin="anonymous"></script>
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="/build/constrast-bootstrap-pro/js/cdb.js"></script>
+  <script src='packages/core/main.js'></script>
+  <script src='packages/interaction/main.js'></script>
+  <script src='packages/daygrid/main.js'></script>
+  <script>
+    count = 0;
+    function filterOn() {
+      var x = document.getElementById("cultural");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+      var a = document.getElementById("musical");
+      if (a.style.display === "none") {
+        a.style.display = "block";
+      } else {
+        a.style.display = "none";
+      }
+      var b = document.getElementById("engineering");
+      if (b.style.display === "none") {
+        b.style.display = "block";
+      } else {
+        b.style.display = "none";
+      }
+      var c = document.getElementById("professional");
+      if (c.style.display === "none") {
+        c.style.display = "block";
+      } else {
+        c.style.display = "none";
+      }
+    }
+
+
+
+    function startRecs(cardImage, card) {
+      let img = document.createElement('img');
+      img.src = 'GFFH6tWbgAAAqwX.jpg';
+      img.className = "cardImage";
+      document.getElementById(cardImage).appendChild(img);
+
+      let h5 = document.createElement('h5');
+      h5.src = 'GFFH6tWbgAAAqwX.jpg';
+      h5.className = "cardHeader";
+      h5.innerHTML = "SASE"
+      document.getElementById(card).appendChild(h5);
+
+      let border = document.createElement('p');
+      border.innerHTML = "insert description here";
+      border.className = "cardText";
+      document.getElementById(card).appendChild(border);
+
+      let button = document.createElement('button');
+      button.innerHTML = 'Follow';
+      button.className = "cardButton";
+      document.getElementById(card).appendChild(button);
+    }
+
+    function createCard() {
+      let div = document.createElement("div");
+      div.className = "card";
+      div.setAttribute('id', 'cardImage' + count);
+      div.style.width = "18rem";
+
+      let div2 = document.createElement("div");
+      div2.className = "card-body";
+      div2.setAttribute('id', 'card' + count);
+
+      div.appendChild(div2);
+
+      document.getElementById('allCards').appendChild(div);
+
+      count++;
+    }
+
+    function addCard(cardImage, card, org, description, pfp) {
+      let img = document.createElement('img');
+      img.src = pfp;
+      img.className = "cardImage";
+      document.getElementById(cardImage).appendChild(img);
+
+      let h5 = document.createElement('h5');
+      h5.src = 'GFFH6tWbgAAAqwX.jpg';
+      h5.className = "cardHeader";
+      h5.innerHTML = org;
+      document.getElementById(card).appendChild(h5);
+
+      let border = document.createElement('p');
+      border.innerHTML = description;
+      border.className = "cardText";
+      document.getElementById(card).appendChild(border);
+
+      let button = document.createElement('button');
+      button.innerHTML = 'Follow';
+      button.className = "cardButton";
+      document.getElementById(card).appendChild(button);
+    }
+
+
+    searchedOrganizations = [];
+    let searchedOrgs = [1, 2, 3, 4, 5];
+    let searchedDescriptions = [1, 2, 3, 4, 5];
+    let searchedPfp = ['aasflp.JPG', 'aasflp.JPG', 'aasflp.JPG', 'aasflp.JPG', 'aasflp.JPG'];
+
+    let orgs = [1, 2, 3, 4, 5];
+    let descriptions = [1, 2, 3, 4, 5];
+    let pfp = ['aasflp.JPG', 'aasflp.JPG', 'aasflp.JPG', 'aasflp.JPG', 'aasflp.JPG'];
+
+    function searchOrgs() {
+      const searchBox = document.getElementById("form1").value;
+      for (var i = 0; i < orgs.length; i++) {
+        if (searchBox == orgs[i]) {
+          searchedOrganizations.push(i);
+          alert(searchedOrganizations);
+        }
+      }
+    }
+
+    for (let i = 0; i < orgs.length; i++) {
+      if (searchedOrganizations.length > 0) {
+        createCard();
+        addCard("cardImage" + i, "card" + i, searchedOrgs[i], searchedDescriptions[i], searchedPfp[i]);
+      } else {
+        createCard();
+        addCard("cardImage" + i, "card" + i, searchedOrgs[i], searchedDescriptions[i], searchedPfp[i]);
+      }
+    }
+
+    startRecs("cardImage", "card");
+    startRecs("cardImage02", "card02");
+    startRecs("cardImage03", "card03");
+    startRecs("cardImage04", "card04");
+
+  </script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
